@@ -15,7 +15,8 @@ namespace LINQ_practice
                 new Person() {Name = "Kennedy", Id = 3},
                 new Person() {Name = "fesf", Id=4},
                 new Person() {Name = "dsfsj", Id = 5},
-                new Person() {Id = 7, Name = "FWFWEF"}
+                new Person() {Id = 7, Name = "FWFWEF"},
+                new Person() {Id = 8, Name = "jfjfhhef"}
 
             };
 
