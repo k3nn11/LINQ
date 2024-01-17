@@ -25,8 +25,8 @@ namespace LINQ_practice
                 Console.WriteLine(name.ToString());
             }
             var chice = list.Sum(x => x.Id);
-            var IdSum = list.MySum(x => x.Id);
-            Console.WriteLine(IdSum.ToString());
+            //var IdSum = list.MySum(x => x.Id);
+            //Console.WriteLine(IdSum.ToString());
             var Order = list.MySingleOrDefault(x => x.Id == 5);
             Console.WriteLine(Order.Name);
 
