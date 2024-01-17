@@ -19,34 +19,34 @@ namespace LINQ_practice
 
             };
 
-            //var nameList = list.MyWhere(x => x.Id > 3);
-            //foreach (var name in nameList)
-            //{
-            //    Console.WriteLine(name.ToString());
-            //}
+            var nameList = list.MyWhere(x => x.Id > 3);
+            foreach (var name in nameList)
+            {
+                Console.WriteLine(name.ToString());
+            }
             var chice = list.Sum(x => x.Id);
-            //var IdSum = list.MySum(x => x.Id);
-            //Console.WriteLine(IdSum.ToString());
+            var IdSum = list.MySum(x => x.Id);
+            Console.WriteLine(IdSum.ToString());
             var Order = list.MySingleOrDefault(x => x.Id == 5);
             Console.WriteLine(Order.Name);
 
-            //var ToDict = list.MyToDictionary(s => s.Name);
-            //Console.WriteLine(ToDict);
-            //foreach (var x in ToDict)
-            //{
-            //    Console.WriteLine("key : {0}, value {1}", x.Key, x.Value);
-            //}
-            //var order = list.OrderBy(s => s.Name);
-            //foreach (var x in order)
-            //{
-            //    Console.WriteLine(x.Name);
-            //}
-            //var sorted = list.MyOrderBy(s => s.Id);
-            //foreach (var x in sorted)
-            //{
-            //    Console.WriteLine(x.Id);
-            //}
-             
+            var ToDict = list.MyToDictionary(s => s.Name);
+            Console.WriteLine(ToDict);
+            foreach (var x in ToDict)
+            {
+                Console.WriteLine("key : {0}, value {1}", x.Key, x.Value);
+            }
+            var order = list.OrderBy(s => s.Name);
+            foreach (var x in order)
+            {
+                Console.WriteLine(x.Name);
+            }
+            var sorted = list.MyOrderBy(s => s.Id);
+            foreach (var x in sorted)
+            {
+                Console.WriteLine(x.Id);
+            }
+
         }
     }
 }
