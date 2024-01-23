@@ -1,0 +1,10 @@
+The Battleship Game
+
+Task: develop the structure and entities needed for the game Battleship
+
+Basic entities: playing field and ships
+
+The playing field is a two-dimensional Cartesian coordinate system.
+Ships represent a point or segment of a certain length. Ships can move at some speed in some direction.Ships can be military, auxiliary or mixed. Warships can fire, auxiliary ships - repair, mixed type - both fire and repair. Shot and repair have some range, which depends on the ship, but not on the type of action.
+Ships are considered the same if they are of the same type, have the same speed and length (for segment ships). Comparing ships should be done using the "==" and "!=" operations, the "> < >= <=" operations should not be supported.Ships can be located on the playing field in any of the quadrants and have integer coordinates along the X and Y axes. It should be possible to add ships to the playing field, but only in empty spaces. Access to the ship on the playing field is carried out by an indexer, including a quadrant, module X and module Y.
+The implementation of the ship and the playing field should include a convenient way to display its state in line form. The state of the playing field includes a list of all ships, sorted by distance from the center.

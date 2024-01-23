@@ -32,7 +32,7 @@ namespace LINQ_practice
             //var IdSum = list.MySum(x => x.Id);
             //Console.WriteLine(IdSum.ToString());
             //var o = list.SingleOrDefault(x => x.Id == 0);
-            var Order = list.MySingleOrDefault(x => x.Id == 4);
+            var Order = list.MySingleOrDefault(x => x.Id == 0);
             Console.WriteLine(Order.Name);
 
             //var ToDict = list.MyToDictionary(s => s.Name);
