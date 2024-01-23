@@ -17,7 +17,7 @@ namespace LINQ_practice
         {
             foreach(var item in source)
             {
-                yield return item;
+                if (predicate(item)) yield return item;
             }
         }
 
@@ -59,32 +59,30 @@ namespace LINQ_practice
         }
 
         public static TSource MySingleOrDefault<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
-        { 
-            if (source is null)
+        {
+            
+            if (source == null || predicate == null)
             {
-                throw new ArgumentNullException(nameof (source));
-            }    
-            if (predicate == null)
-            {
-                throw new ArgumentNullException(nameof(predicate));
+                throw new ArgumentNullException();
             }
 
             int num = 0;
             var val = default(TSource);
-            foreach ( var item in source)
-            {
+            foreach (var item in source)
+            {           
+
                 if (predicate(item))
                 {
-                    val = item;
                     num++;
+                    if (num > 1)
+                    {
+                        throw new Exception("More than one match");
+                    }
+                    val = item;
+                    continue; 
                 }
             }
-            if (num == 0)
-                return val = default(TSource);
-            else if (num == 1)
-                return val;
-            else
-                throw new Exception("More than one match");
+            return val;
         }
 
         public static Dictionary<TKey, TSource> MyToDictionary<TKey, TSource>(this IEnumerable<TSource> source, Func<TSource, TKey> Selector)
